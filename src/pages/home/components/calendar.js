@@ -1,9 +1,10 @@
-const Calendar = () => {
+const Cal = () => {
     return (
         <div className="calendar">
-            <h2>日曆</h2>
+            <h2>Sort by time</h2>
+            
         </div>
     )
 }
 
-export default Calendar;
+export default Cal;

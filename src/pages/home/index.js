@@ -1,6 +1,6 @@
 import Edit from "./components/edit"
 import List from "./components/list"
-import Calendar from "./components/calendar"
+import Cal from "./components/calendar"
 import "./index.css"
 import { useState, useEffect, useRef } from "react"
 
@@ -27,11 +27,17 @@ const Home = () => {
     }, [data]);
     
 
-    return (<div className="app">
-        <h1>FILL</h1>
-        <Edit add={setData} rerenderStatus={rerenderStatus}/>
-        <List data={data} setData={setData} rerenderStatus={rerenderStatus}/>
-    </div>)
+    return (
+    <div>
+        <div className="app">
+            <div className="main">
+            <h1>FILL</h1>
+            <Edit data={data} add={setData} rerenderStatus={rerenderStatus}/>
+            <List data={data} setData={setData} rerenderStatus={rerenderStatus}/>
+            </div>
+        </div>
+    </div>
+    )
 }
 
 export default Home

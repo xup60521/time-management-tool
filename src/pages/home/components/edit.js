@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { v4 } from "uuid"
 
-const Edit = ({ add, rerenderStatus }) => {
+const Edit = ({ add, rerenderStatus, data }) => {
 
     const [title, setTitle] = useState("");
     function titleChange(e) {
@@ -40,6 +40,7 @@ const Edit = ({ add, rerenderStatus }) => {
         setTitle("");
         setNote("");
         rerenderStatus.current = true;
+        
     }
 
     return (
