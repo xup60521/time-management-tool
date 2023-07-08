@@ -11,7 +11,20 @@ const Home = () => {
     const [data, setData] = useState([]);
     const rerenderStatus = useRef(false);
 
-    
+    useEffect(()=> {
+        if (localStorage.getItem("user") != null) {
+            setData(JSON.parse(localStorage.getItem("user")))
+        }
+    }, ["a"])
+
+    useEffect(()=> {
+        if (rerenderStatus.current == false) {
+            return;
+        } else {
+            localStorage.setItem('user', JSON.stringify(data));
+            rerenderStatus.current = false; 
+        }
+    }, [data]);
     
 
     return (<div className="app">
