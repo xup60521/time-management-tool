@@ -122,12 +122,12 @@ div.item {
     display: flex; 
     justify-content: space-between;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 p.item.title {
     font-size: larger;
     text-align: left;
-    color: white;
     font-weight: bold;
     margin: 0;
     padding: 0;
