@@ -22,6 +22,17 @@
     border-radius: 10px;
 }
 
+.cal {
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid none;
+    padding-bottom: 10px;
+    background-color: white;;
+    color: #2D4356;
+    border-radius: 10px;
+}
+
 h1 {
     color: #2D4356;
     height: 20px;
@@ -148,6 +159,11 @@ button.delete {
     flex-shrink: 0;
 }
 
+button.delete:hover {
+    background-color: rgb(219, 218, 218);
+    border-color: rgb(219, 218, 218);
+}
+
 
 
 button.menu {
@@ -174,6 +190,59 @@ div.modal {
     font-weight: bold;
 }
 
+li#selectPage {
+    list-style-type: none;
+    margin-left: 3px;
+}
+
+button#closePopup {
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    width: 50px;
+    margin-top: 25px;
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+button#closePopup:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+}
+
+button.changedate {
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    width: 50px;
+    margin-top: 25px;
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+button.changedate:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+}
+
+input.changedate {
+    border: 2px solid #2D4356;
+    border-radius: 5px;
+    background-color: white;
+    color: #2D4356;
+    width: 200px;
+    margin: 2px;
+    padding: 3px;
+    padding-left: 5px;
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: center;
+}
+
 @media (min-width: 820px) {
     .app {
         width: 100%;
@@ -185,7 +254,10 @@ div.modal {
         margin-top: 10px;
     }
 
-    
+    .cal {
+        width: 650px;
+        margin-top: 10px;
+    }
 
     button.menu {
         position: absolute;

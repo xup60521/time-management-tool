@@ -8,7 +8,8 @@ const Edit = ({ add, rerenderStatus, data }) => {
         setTitle(e.target.value);
     }
 
-    const [date, setDate] = useState("");
+    let currentDate = new Date();
+    const [date, setDate] = useState(currentDate.getFullYear() + "-" + (new String(currentDate.getMonth()+1)).padStart(2, "0") + "-" + (new String(currentDate.getDate())).padStart(2, "0") );
     function dateChange(e) {
         setDate(e.target.value);
     }
