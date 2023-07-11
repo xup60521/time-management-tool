@@ -34,7 +34,7 @@ const Home = ({data, setData, rerenderStatus}) => {
                     close => (
                         <div className='modal'>
                             <h3 className='content'>選擇頁面</h3>
-                            <div class="navlink">
+                            <div className="navlink">
                                 <NavLink to="/" style={{ textDecoration: 'none' }} ><li id="selectPage">主頁面</li></NavLink>
                                 <NavLink to="/Calendar" style={{ textDecoration: 'none' }} ><li id="selectPage">日曆</li></NavLink>
                             </div>

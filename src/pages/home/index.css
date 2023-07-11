@@ -243,7 +243,42 @@ input.changedate {
     text-align: center;
 }
 
-@media (min-width: 820px) {
+select#changecalendarviewtype {
+    margin-top: 25px;
+    text-align: center;
+    appearance: none;
+    background-color: white;
+    border: 2px solid var(--prime-background-color);
+    border-radius: 5px;
+    color: var(--prime-background-color);
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+div#changecalendarviewtype {
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    appearance: none;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: var(--prime-background-color);
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+    width: 100px;
+
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: -2px;
+    --swiper-navigation-color: var(--prime-background-color);
+}
+
+
+
+@media (min-width: 780px) {
     .app {
         width: 100%;
         display: flex;
