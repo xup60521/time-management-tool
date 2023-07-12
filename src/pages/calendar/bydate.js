@@ -31,7 +31,7 @@ const ByDate = ({ data, setData, rerenderStatus }) => {
     }
 
     return (
-        <div className="bydate">
+        <div className="datecontainer">
             <div className="selectDate">
                 <button className="changedate" id="lastdate" onClick={prevdate} ><AiOutlineDoubleLeft/></button>
                 <input className="changedate" type="date" value={selectdate} onChange={changedate} />

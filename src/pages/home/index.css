@@ -182,13 +182,16 @@ button.menu:hover {
 
 div.modal {
     background-color: white;
-    border: 3px solid var(--prime-background-color);
     border-radius: 10px;
     padding: 30px;
     font-family: var(--font);
     color: var(--prime-background-color);
     font-weight: bold;
+    box-shadow: 1px 1px 5px black;
 }
+
+
+
 
 li#selectPage {
     list-style-type: none;
@@ -243,6 +246,54 @@ input.changedate {
     text-align: center;
 }
 
+input.changemonth_month {
+    border: 2px solid #2D4356;
+    border-radius: 5px;
+    background-color: white;
+    color: #2D4356;
+    width: 4rem;
+    margin: 2px;
+    margin-top: 4px;
+    padding: 3px;
+    padding-left: 5px;
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: center;
+}
+
+input.changemonth_year {
+    border: 2px solid #2D4356;
+    border-radius: 5px;
+    background-color: white;
+    color: #2D4356;
+    width: 4rem;
+    margin: 2px;
+    margin-top: 4px;
+    padding: 3px;
+    padding-left: 5px;
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: center;
+}
+
+button.changemonth {
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    width: 2rem;
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 4px;
+}
+
+button.changemonth:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+}
+
 select#changecalendarviewtype {
     margin-top: 25px;
     text-align: center;
@@ -276,7 +327,21 @@ div#changecalendarviewtype {
     --swiper-navigation-color: var(--prime-background-color);
 }
 
+div.caltop {
+    background-color: var(--prime-background-color);
+    margin: 2px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
 
+div.monthcontainer {
+    margin-top: 20px;
+    background-color: var(--prime-background-color);
+    border: 1px solid var(--prime-background-color);
+    border-radius: 5px;
+}
 
 @media (min-width: 780px) {
     .app {
