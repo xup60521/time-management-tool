@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
+import MonthDisplay from "./monthdisplay";
 
-const ByMonth = () => {
+const ByMonth = ({ data, setData, rerenderStatus }) => {
 
     let currentDate = new Date();
 
@@ -43,6 +44,16 @@ const ByMonth = () => {
                 </div>
                 <button onClick={nextMonth} className="changemonth"><AiOutlineDoubleRight/></button>
             </div>
+            <div className="calshowweek">
+                <p id="week">星期天</p>
+                <p id="week">星期一</p>
+                <p id="week">星期二</p>
+                <p id="week">星期三</p>
+                <p id="week">星期四</p>
+                <p id="week">星期五</p>
+                <p id="week">星期六</p>
+            </div>
+            <MonthDisplay data={data} setData={setData} rerenderStatus={rerenderStatus} selectmonthMonth={selectmonthMonth} selectmonthYear={selectmonthYear} />
         </div>
     )
 };

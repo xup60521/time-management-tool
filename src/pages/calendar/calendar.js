@@ -34,7 +34,7 @@ const Cal = ({ data, setData, rerenderStatus }) => {
             <div className="menu"><Popup trigger={<button className="menu"><HiOutlineMenu/></button>} modal nested>
                 {
                     close => (
-                        <div className='modal'>
+                        <div className='modal' id="popupselectmenu">
                             <h3 className='content'>選擇頁面</h3>
                             <div className="navlink">
                                 <NavLink to="/" style={{ textDecoration: 'none' }} ><li id="selectPage">主頁面</li></NavLink>
@@ -61,8 +61,8 @@ const Cal = ({ data, setData, rerenderStatus }) => {
                 <div className="calview">
                     {(()=>{switch(viewType) {
                         case "Day": return (<ByDate data={data} setData={setData} rerenderStatus={rerenderStatus} />);
-                        case "Week": return (<ByWeek/>);
-                        case "Month": return (<ByMonth/>);
+                        case "Week": return (<ByWeek data={data} setData={setData} rerenderStatus={rerenderStatus} />);
+                        case "Month": return (<ByMonth data={data} setData={setData} rerenderStatus={rerenderStatus} />);
                     }})()}
                 </div>
             </div>

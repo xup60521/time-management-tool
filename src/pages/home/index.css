@@ -180,7 +180,7 @@ button.menu:hover {
     color: black;
 }
 
-div.modal {
+div.modal#popupselectmenu {
     background-color: white;
     border-radius: 10px;
     padding: 30px;
@@ -190,7 +190,15 @@ div.modal {
     box-shadow: 1px 1px 5px black;
 }
 
-
+div.modal#calendarmonthclickevent {
+    background-color: rgba(214, 214, 214, 0.615);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: var(--font);
+    color: var(--prime-background-color);
+    font-weight: bold;
+    box-shadow: 1px 1px 5px black;
+}
 
 
 li#selectPage {
@@ -333,7 +341,7 @@ div.caltop {
     margin-top: 0px;
     display: flex;
     justify-content: space-between;
-    padding: 3px;
+    padding: 0px;
 }
 
 div.monthcontainer {
@@ -341,6 +349,77 @@ div.monthcontainer {
     background-color: var(--prime-background-color);
     border: 1px solid var(--prime-background-color);
     border-radius: 5px;
+    padding: 3px;
+}
+
+div.calshowweek {
+    background-color: white;
+    font-family: var(--font);
+    display: grid;
+    grid-template-columns: calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7);
+    box-sizing: border-box;
+    border: 2px solid var(--prime-background-color);
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: bold;
+}
+
+p#week {
+    text-align: center;
+    margin: 4px;
+}
+
+div.calshowweek :first-child {
+    margin-left: 5px;
+}
+
+div.calshowweek :last-child {
+    margin-right: 5px;
+}
+
+div.monthdisplay {
+    background-color: white;
+    font-family: var(--font);
+    display: grid;
+    grid-template-columns: calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7);
+    box-sizing: border-box;
+    border: 2px solid var(--prime-background-color);
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+div.cellcontainer {
+    height: 5rem;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+div.cellcontainer::-webkit-scrollbar {
+    display: none;
+  }
+
+p.celldate {
+    font-size: x-small;
+    padding: 0px;
+    margin: auto;
+    text-align: center;
+}
+
+div.calendarmonthcolorbar {
+    height: 0.25rem;
+    margin: 0.2rem;
+    border-radius: 10%;
 }
 
 @media (min-width: 780px) {
