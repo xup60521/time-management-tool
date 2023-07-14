@@ -22,6 +22,8 @@ const ByMonth = ({ data, setData, rerenderStatus }) => {
         } else if (selectmonthMonth == 12) {
             setselectmonthYear(selectmonthYear+1);
             setselectmonthMonth(1);
+        } else {
+            setselectmonthMonth(12);
         };
     }
 
@@ -31,6 +33,8 @@ const ByMonth = ({ data, setData, rerenderStatus }) => {
         } else if (selectmonthMonth == 1) {
             setselectmonthYear(selectmonthYear-1);
             setselectmonthMonth(12);
+        } else {
+            setselectmonthMonth(1);
         };
     }
 

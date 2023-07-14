@@ -191,7 +191,17 @@ div.modal#popupselectmenu {
 }
 
 div.modal#calendarmonthclickevent {
-    background-color: rgba(214, 214, 214, 0.615);
+    background-color: rgba(255, 255, 255, 0.666);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: var(--font);
+    color: var(--prime-background-color);
+    font-weight: bold;
+    box-shadow: 1px 1px 5px black;
+}
+
+div.modal#calendarweekclickevent {
+    background-color: rgba(255, 255, 255, 0.666);
     border-radius: 10px;
     padding: 10px;
     font-family: var(--font);
@@ -284,6 +294,36 @@ input.changemonth_year {
     text-align: center;
 }
 
+input.changeweek_month {
+    border: 2px solid #2D4356;
+    border-radius: 5px;
+    background-color: white;
+    color: #2D4356;
+    width: 4rem;
+    margin: 2px;
+    margin-top: 4px;
+    padding: 3px;
+    padding-left: 5px;
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: center;
+}
+
+input.changeweek_year {
+    border: 2px solid #2D4356;
+    border-radius: 5px;
+    background-color: white;
+    color: #2D4356;
+    width: 7rem;
+    margin: 2px;
+    margin-top: 4px;
+    padding: 3px;
+    padding-left: 5px;
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: center;
+}
+
 button.changemonth {
     border: 2px solid rgb(102, 123, 132);
     border-radius: 5px;
@@ -298,6 +338,24 @@ button.changemonth {
 }
 
 button.changemonth:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+}
+
+button.changeweek {
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    width: 2rem;
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 4px;
+}
+
+button.changeweek:hover {
     background-color: #2D4356;
     border-color: #2D4356;
 }
@@ -345,6 +403,14 @@ div.caltop {
 }
 
 div.monthcontainer {
+    margin-top: 20px;
+    background-color: var(--prime-background-color);
+    border: 1px solid var(--prime-background-color);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+div.weekcontainer {
     margin-top: 20px;
     background-color: var(--prime-background-color);
     border: 1px solid var(--prime-background-color);
@@ -420,6 +486,46 @@ div.calendarmonthcolorbar {
     height: 0.25rem;
     margin: 0.2rem;
     border-radius: 10%;
+}
+
+div.weekcell {
+    height: 1rem;
+    padding: 0.25rem;
+    margin: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+p.weekcell {
+    text-align: center;
+    margin: auto;
+}
+
+div.weekdisplay {
+    background-color: white;
+    font-family: var(--font);
+    display: grid;
+    grid-template-columns: calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7);
+    box-sizing: border-box;
+    border: 2px solid var(--prime-background-color);
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+div.calweekcontainer {
+    padding: 3px;
+}
+
+p.calweekdate {
+    text-align: center;
+    font-family: var(--font);
+    background-color: white;
+    margin: 0px;
 }
 
 @media (min-width: 780px) {

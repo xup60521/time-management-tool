@@ -16,7 +16,7 @@ const ByDate = ({ data, setData, rerenderStatus }) => {
             dateobj.setDate(dateobj.getDate()+1);
             setselectdate(dateobj.getFullYear() + "-" + (new String(dateobj.getMonth()+1)).padStart(2, "0") + "-" + (new String(dateobj.getDate())).padStart(2, "0") );
         } else {
-            return;
+            setselectdate(currentDate.getFullYear() + "-" + (new String(currentDate.getMonth()+1)).padStart(2, "0") + "-" + (new String(currentDate.getDate())).padStart(2, "0"));
         }
     }
 
@@ -26,7 +26,7 @@ const ByDate = ({ data, setData, rerenderStatus }) => {
             dateobj.setDate(dateobj.getDate()-1);
             setselectdate(dateobj.getFullYear() + "-" + (new String(dateobj.getMonth()+1)).padStart(2, "0") + "-" + (new String(dateobj.getDate())).padStart(2, "0") );
         } else {
-            return;
+            setselectdate(currentDate.getFullYear() + "-" + (new String(currentDate.getMonth()+1)).padStart(2, "0") + "-" + (new String(currentDate.getDate())).padStart(2, "0"));
         }
     }
 

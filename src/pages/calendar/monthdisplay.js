@@ -1,4 +1,4 @@
-import Cell from "./cell";
+import Cell from "./monthcell";
 
 const MonthDisplay = ({ data, setData, rerenderStatus, selectmonthMonth, selectmonthYear }) => {
 
