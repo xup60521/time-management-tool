@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ByDate from "./bydate";
 import ByWeek from "./byweek";
 import ByMonth from "./bymonth";
+import Menu from "../menu";
 
 const Cal = ({ data, setData, rerenderStatus }) => {
 
@@ -31,26 +32,7 @@ const Cal = ({ data, setData, rerenderStatus }) => {
     return (
     <div>
         <div className="app">
-            <div className="menu"><Popup trigger={<button className="menu"><HiOutlineMenu/></button>} modal nested>
-                {
-                    close => (
-                        <div className='modal' id="popupselectmenu">
-                            <h3 className='content'>選擇頁面</h3>
-                            <div className="navlink">
-                                <NavLink to="/" style={{ textDecoration: 'none' }} ><li id="selectPage">主頁面</li></NavLink>
-                                <NavLink to="/Calendar" style={{ textDecoration: 'none' }} ><li id="selectPage">日曆</li></NavLink>
-                            </div>
-                            <div>
-                                <button id="closePopup" onClick=
-                                    {() => close()}>
-                                        Close
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }
-                </Popup>
-            </div>
+            <Menu />
             <div className="cal">
                 <h1>CALENDAR</h1>            
                 <select defaultValue="Day" id="changecalendarviewtype"  onChange={changeview}>

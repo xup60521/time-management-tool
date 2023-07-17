@@ -1,6 +1,6 @@
 import Edit from "./edit"
 import List from "./list"
-import "./../index.css"
+import Menu from "../../menu"
 import { useState, useEffect, useRef } from "react"
 import {HiOutlineMenu} from "react-icons/hi"
 import {Popup} from "reactjs-popup"
@@ -8,8 +8,6 @@ import { NavLink } from "react-router-dom"
 
 
 const Home = ({data, setData, rerenderStatus}) => {
-
-    
 
     useEffect(()=> {
         if (localStorage.getItem("user") != null) {
@@ -29,25 +27,7 @@ const Home = ({data, setData, rerenderStatus}) => {
     return (
     <div>
         <div className="app">
-            <div className="menu"><Popup trigger={<button className="menu"><HiOutlineMenu/></button>} modal nested>
-                {
-                    close => (
-                        <div className='modal' id="popupselectmenu">
-                            <h3 className='content'>選擇頁面</h3>
-                            <div className="navlink">
-                                <NavLink to="/" style={{ textDecoration: 'none' }} ><li id="selectPage">主頁面</li></NavLink>
-                                <NavLink to="/Calendar" style={{ textDecoration: 'none' }} ><li id="selectPage">日曆</li></NavLink>
-                            </div>
-                            <div>
-                                <button id="closePopup" onClick=
-                                    {() => close()}>
-                                        Close
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }
-                </Popup></div>
+            <Menu />
             <div className="main">
             <h1>FILL</h1>
             <Edit data={data} add={setData} rerenderStatus={rerenderStatus}/>

@@ -12,7 +12,7 @@ const List = ({ data, setData, rerenderStatus }) => {
     return (
         <div className="list">
             {list.map((item) => {
-                const { title, date, note, id} = item;
+                const { title, date, note, id, group} = item;
                 return (
                     <Item 
                     key={id}
@@ -22,6 +22,7 @@ const List = ({ data, setData, rerenderStatus }) => {
                     note={note}
                     setData={setData}
                     rerenderStatus={rerenderStatus}
+                    group={group}
                     />
                 )
             })}

@@ -19,6 +19,11 @@ const Edit = ({ add, rerenderStatus, data }) => {
         setNote(e.target.value);
     }
 
+    const [group, setGroup] = useState("");
+    const groupChange = (e) => {
+        setGroup(e.target.value);
+    }
+
     
 
     function addItem() {
@@ -34,6 +39,7 @@ const Edit = ({ add, rerenderStatus, data }) => {
                     title,
                     date,
                     note,
+                    group,
                 },
                 ...prev,
             ];
@@ -52,6 +58,8 @@ const Edit = ({ add, rerenderStatus, data }) => {
             <input value={date} onChange={dateChange} type="date" id="date" className="edit" required/>
             <p id="note" className="edit">內容</p>
             <input value={note} onChange={noteChange} type="text" id="note" className="edit"/>
+            <p id="group" className="edit">群組</p>
+            <input value={group} onChange={groupChange} type="text" id="group" className="edit" />
             <button type="submit" className="add" onClick={addItem}>新增</button>
         </div>
     )

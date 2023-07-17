@@ -18,7 +18,7 @@ const WeekCell = ({ data, date }) => {
         <div className="weekcellcontainer">
             {tasksinaday.map((d, i)=> {
                 return (
-                    <div className="weekcell" style={{backgroundColor: "#"+randomColor, color: (blackandwhite > 128) ? "black" : "white"}} onClick={() => {
+                    <div className="weekcell" style={{backgroundColor: "#2D4356", color: "white"}} onClick={() => {
                         setOpen(o => !o);
                         setItem(d);
                     }}>
@@ -27,7 +27,7 @@ const WeekCell = ({ data, date }) => {
                 )
             })}
             <Popup open={open} closeOnDocumentClick onClose={closeModal} >
-                <div className="modal" id="calendarweekclickevent" style={{border: "2px solid "+"#"+randomColor}}>
+                <div className="modal" id="calendarweekclickevent" style={{border: "2px solid "+"#2D4356"}}>
                     <p className="item title">{item.title}</p>
                     <p className="item date">{item.date}</p>
                     <p className="item note">{item.note}</p>
