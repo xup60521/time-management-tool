@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import WeekDisplay from "./weekdisplay";
 
-const ByWeek = ({ data, setData, rerenderStatus }) => {
+const ByWeek = ({ data, setData, rerenderStatus, settingprofile }) => {
 
     const currentDate = new Date();
     const [selectdateofaweek, setselectdateofaweek] = useState(currentDate.getFullYear() + "-" + (new String(currentDate.getMonth()+1)).padStart(2, "0") + "-" + (new String(currentDate.getDate())).padStart(2, "0") );
@@ -48,7 +48,7 @@ const ByWeek = ({ data, setData, rerenderStatus }) => {
                 <p id="week">星期五</p>
                 <p id="week">星期六</p>
             </div>
-            <WeekDisplay data={data} setDate={setData} rerenderStatus={rerenderStatus} selectdateofaweek={selectdateofaweek} />
+            <WeekDisplay data={data} setDate={setData} rerenderStatus={rerenderStatus} selectdateofaweek={selectdateofaweek} settingprofile={settingprofile} />
         </div>
     )
 };

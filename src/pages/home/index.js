@@ -22,7 +22,7 @@ const Index = () => {
     return (
         <HashRouter>
             <Routes>
-                <Route exact path="/" element={<Home data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile} />} />
+                <Route exact path="/" element={<Home data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile}  />} />
                 <Route exact path="/Calendar/" element={<Cal data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile} />} />
                 <Route exact path="/GroupSetting/" element={<GroupSetting data={data} setData={setData} settingprofile={settingprofile} setsettingprofile={setsettingprofile} rerenderStatus={rerenderStatus} colorstatus={colorstatus} />} />
                 {data.map((item)=> {

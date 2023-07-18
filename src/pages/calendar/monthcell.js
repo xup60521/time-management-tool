@@ -2,13 +2,15 @@ import { xor4096 } from "seedrandom";
 import Popup from "reactjs-popup";
 import { useState, useEffect } from "react";
 
-const Cell = ({ data, setData, rerenderStatus, selectmonthMonth, selectmonthYear, date }) => {
+const Cell = ({ data, setData, rerenderStatus, selectmonthMonth, selectmonthYear, date, settingprofile }) => {
 
     let monthdata = Array.from(data);
     const whatdateisit = (new String(selectmonthYear))+"-"+(new String(selectmonthMonth).padStart(2, "0"))+"-"+(new String(date)).padStart(2, "0");
     monthdata = monthdata.filter(d => d.date == (whatdateisit));
     const [open, setOpen] = useState(false);  
     const closeModal = () => setOpen(false);
+
+    let groupsinsetting = (new Object(settingprofile)).group.map(i=>i.name);
 
     const rng = new xor4096(whatdateisit);
     const randomColor = Math.floor(rng()*16777215).toString(16).padStart(6, "0");
@@ -35,19 +37,37 @@ const Cell = ({ data, setData, rerenderStatus, selectmonthMonth, selectmonthYear
     return (
     <div className="cell">
         {monthdata.map((d)=>{
-            return <div className="calendarmonthcolorbar" id={d.id} style={{backgroundColor: "#"+randomColor}} onClick={() => {
+            let group = d.group;
+            let color = "";
+            if (groupsinsetting.indexOf(group) != -1) {
+                color = settingprofile.group[groupsinsetting.indexOf(group)].color;
+            } else {
+                color = "#2D4356";
+            }
+            return <div className="calendarmonthcolorbar" id={d.id} style={{backgroundColor: color}} onClick={() => {
                 setOpen(o => !o);
                 setItem(d);
             }} >
             </div>
         })}
-        <Popup open={open} closeOnDocumentClick onClose={closeModal} >
-            <div className="modal" id="calendarmonthclickevent" style={{border: "2px solid "+"#"+randomColor, top: mousePos.y}}>
-                <p className="item title">{item.title}</p>
-                <p className="item date">{item.date}</p>
-                <p className="item note">{item.note}</p>
-            </div>
-        </Popup>
+        {(()=>{
+                let color = "";
+                let group = item.group;
+                if (groupsinsetting.indexOf(group) != -1) {
+                    color = settingprofile.group[groupsinsetting.indexOf(group)].color;
+                } else {
+                    color = "#2D4356";
+                };
+                return (
+                    <Popup open={open} closeOnDocumentClick onClose={closeModal} >
+                        <div className="modal" id="calendarweekclickevent" style={{border: `2px solid ${color}`}}>
+                            <p className="item title">{item.title}</p>
+                            <p className="item date">{item.date+" "+item.group}</p>
+                            <p className="item note">{item.note}</p>
+                        </div>
+                    </Popup>
+                )
+            })()}
     </div>)
 }
 

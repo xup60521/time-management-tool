@@ -7,7 +7,7 @@ import ByWeek from "./byweek";
 import ByMonth from "./bymonth";
 import Menu from "../menu";
 
-const Cal = ({ data, setData, rerenderStatus }) => {
+const Cal = ({ data, setData, rerenderStatus, settingprofile }) => {
 
     useEffect(()=> {
         if (localStorage.getItem("user") != null) {
@@ -42,9 +42,9 @@ const Cal = ({ data, setData, rerenderStatus }) => {
                 </select>
                 <div className="calview">
                     {(()=>{switch(viewType) {
-                        case "Day": return (<ByDate data={data} setData={setData} rerenderStatus={rerenderStatus} />);
-                        case "Week": return (<ByWeek data={data} setData={setData} rerenderStatus={rerenderStatus} />);
-                        case "Month": return (<ByMonth data={data} setData={setData} rerenderStatus={rerenderStatus} />);
+                        case "Day": return (<ByDate data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile} />);
+                        case "Week": return (<ByWeek data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile} />);
+                        case "Month": return (<ByMonth data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile} />);
                     }})()}
                 </div>
             </div>

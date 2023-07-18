@@ -1,6 +1,6 @@
 import Item from "./item"
 
-const List = ({ data, setData, rerenderStatus }) => {
+const List = ({ data, setData, rerenderStatus, settingprofile }) => {
     let list = Array.from(data);
 
     list.sort((a,b)=> {
@@ -23,6 +23,7 @@ const List = ({ data, setData, rerenderStatus }) => {
                     setData={setData}
                     rerenderStatus={rerenderStatus}
                     group={group}
+                    settingprofile={settingprofile}
                     />
                 )
             })}

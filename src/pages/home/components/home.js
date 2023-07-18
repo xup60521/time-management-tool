@@ -7,7 +7,7 @@ import {Popup} from "reactjs-popup"
 import { NavLink } from "react-router-dom"
 
 
-const Home = ({data, setData, rerenderStatus}) => {
+const Home = ({data, setData, rerenderStatus, settingprofile}) => {
 
     useEffect(()=> {
         if (localStorage.getItem("user") != null) {
@@ -30,8 +30,8 @@ const Home = ({data, setData, rerenderStatus}) => {
             <Menu />
             <div className="main">
             <h1>FILL</h1>
-            <Edit data={data} add={setData} rerenderStatus={rerenderStatus}/>
-            <List data={data} setData={setData} rerenderStatus={rerenderStatus}/>
+            <Edit data={data} add={setData} rerenderStatus={rerenderStatus} />
+            <List data={data} setData={setData} rerenderStatus={rerenderStatus} settingprofile={settingprofile}/>
             </div>
         </div>
     </div>

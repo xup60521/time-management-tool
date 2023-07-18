@@ -1,6 +1,6 @@
 import Cell from "./monthcell";
 
-const MonthDisplay = ({ data, setData, rerenderStatus, selectmonthMonth, selectmonthYear }) => {
+const MonthDisplay = ({ data, setData, rerenderStatus, selectmonthMonth, selectmonthYear, settingprofile }) => {
 
     const daysinamonth = new Date(selectmonthYear, selectmonthMonth, 0).getDate();
     let firstdayinamonth = new Date(selectmonthYear,selectmonthMonth-1,1);
@@ -33,7 +33,7 @@ const MonthDisplay = ({ data, setData, rerenderStatus, selectmonthMonth, selectm
             {datelist.map((d,i)=>{
                 return (<div className="cellcontainer" id={d}>
                         <p className="celldate">{d}</p>
-                        <Cell selectmonthMonth={selectmonthMonth} selectmonthYear={selectmonthYear} data={data} setData={setData} rerenderStatus={rerenderStatus} date={d}/>
+                        <Cell selectmonthMonth={selectmonthMonth} selectmonthYear={selectmonthYear} data={data} setData={setData} rerenderStatus={rerenderStatus} date={d} settingprofile={settingprofile} />
                     </div>)
             })}
         </div>

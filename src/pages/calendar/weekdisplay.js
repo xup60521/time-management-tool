@@ -1,6 +1,6 @@
 import WeekCell from "./weekcell";
 
-const WeekDisplay = ({ data, setData, rerenderStatus, selectdateofaweek }) => {
+const WeekDisplay = ({ data, setData, rerenderStatus, selectdateofaweek, settingprofile }) => {
     
     const firstdayofaweek = new Date(selectdateofaweek);
     firstdayofaweek.setDate(firstdayofaweek.getDate()-firstdayofaweek.getDay());
@@ -20,7 +20,7 @@ const WeekDisplay = ({ data, setData, rerenderStatus, selectdateofaweek }) => {
                         <p className="calweekdate">{(()=>{ 
                             return ((new String(new Number(d.split("-")[1])))+"/"+(new String(new Number(d.split("-")[2]))))
                         })()}</p>
-                        <WeekCell data={data} date={d} />
+                        <WeekCell data={data} date={d} settingprofile={settingprofile} />
                     </div>
                 )
             })}

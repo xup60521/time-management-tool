@@ -2,7 +2,7 @@ import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import { useState } from "react";
 import Item from "./../home/components/item";
 
-const ByDate = ({ data, setData, rerenderStatus }) => {
+const ByDate = ({ data, setData, rerenderStatus, settingprofile }) => {
 
     let currentDate = new Date();
     const [selectdate, setselectdate] = useState(currentDate.getFullYear() + "-" + (new String(currentDate.getMonth()+1)).padStart(2, "0") + "-" + (new String(currentDate.getDate())).padStart(2, "0") );
@@ -51,6 +51,7 @@ const ByDate = ({ data, setData, rerenderStatus }) => {
                             setData={setData}
                             rerenderStatus={rerenderStatus}
                             group={group}
+                            settingprofile={settingprofile}
                             />
                         )
                     }
