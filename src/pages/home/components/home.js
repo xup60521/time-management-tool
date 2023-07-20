@@ -9,9 +9,10 @@ import { NavLink } from "react-router-dom"
 
 const Home = ({data, setData, rerenderStatus, settingprofile}) => {
 
+    /*---------------------------------*/
     useEffect(()=> {
         if (localStorage.getItem("user") != null) {
-            setData(JSON.parse(localStorage.getItem("user")))
+            setData(JSON.parse(localStorage.getItem("user")).posts)
         }
     }, ["a"])
 
@@ -19,10 +20,13 @@ const Home = ({data, setData, rerenderStatus, settingprofile}) => {
         if (rerenderStatus.current == false) {
             return;
         } else {
-            localStorage.setItem('user', JSON.stringify(data));
+            localStorage.setItem('user', JSON.stringify({
+                "posts": data
+            }));
             rerenderStatus.current = false; 
         }
     }, [data]);
+    /*---------------------------------*/
 
     return (
     <div>

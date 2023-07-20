@@ -3,9 +3,11 @@ import Menu from "../menu";
 
 const GroupSetting = ({ data, setData, settingprofile, setsettingprofile, rerenderStatus, colorstatus }) => {
 
+    /*---------------------------------*/
+
     useEffect(()=> {
         if (localStorage.getItem("user") != null) {
-            setData(JSON.parse(localStorage.getItem("user")))
+            setData(JSON.parse(localStorage.getItem("user")).posts)
         }
     }, ["a"])
 
@@ -13,10 +15,14 @@ const GroupSetting = ({ data, setData, settingprofile, setsettingprofile, rerend
         if (rerenderStatus.current == false) {
             return;
         } else {
-            localStorage.setItem('user', JSON.stringify(data));
+            localStorage.setItem('user', JSON.stringify({
+                "posts": data
+            }));
             rerenderStatus.current = false; 
         }
     }, [data]);
+
+    /*---------------------------------*/
 
     useEffect(()=>{
         if (localStorage.getItem("setting") != null ) {

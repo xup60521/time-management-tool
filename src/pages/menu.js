@@ -13,6 +13,7 @@ const Menu = () => {
                                 <NavLink to="/" style={{ textDecoration: 'none' }} ><li id="selectPage">主頁面</li></NavLink>
                                 <NavLink to="/Calendar" style={{ textDecoration: 'none' }} ><li id="selectPage">日曆</li></NavLink>
                                 <NavLink to="/GroupSetting/" style={{ textDecoration: 'none' }}><li id="selectPage">群組設定</li></NavLink>
+                                <NavLink to="/Import/" style={{ textDecoration: 'none' }}><li id="selectPage">資料管理</li></NavLink>
                             </div>
                             <div>
                                 <button id="closePopup" onClick=
