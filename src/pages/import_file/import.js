@@ -53,7 +53,16 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
     const replaceprofile = () => {
         colorstatus.current = true;
         setsettingprofile(InputProfile)
+        let cachesetting = new Object(settingprofile);
+        localStorage.setItem("setting", JSON.stringify(cachesetting));
     }
+
+    useEffect(()=>{
+        if (colorstatus.current == true) {
+            localStorage.setItem("setting", JSON.stringify(settingprofile));
+            colorstatus.current = false;
+        }
+    }, [settingprofile])
 
     return (
         <div className="app">

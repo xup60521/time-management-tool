@@ -64,7 +64,7 @@ const GroupSetting = ({ data, setData, settingprofile, setsettingprofile, rerend
         
         colorstatus.current = true;
     
-   }, [color])
+   }, [color, settingprofile])
 
    useEffect(()=>{
     if (groupinsetting.includes(selectedgroup)) {

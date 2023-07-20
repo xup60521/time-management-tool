@@ -13,7 +13,7 @@ const Index = () => {
     /*---------------------------------*/
     let aca = {"group":[]};
     if (JSON.parse(localStorage.getItem("setting")) != null) {
-        aca = JSON.parse(localStorage.getItem("setting").posts);
+        aca = JSON.parse(localStorage.getItem("setting"));
     }
     const [data, setData] = useState([]);
     const [settingprofile, setsettingprofile] = useState(aca);
