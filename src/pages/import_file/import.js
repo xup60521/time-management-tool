@@ -25,6 +25,12 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
 
     /*---------------------------------*/
 
+    useEffect(()=>{
+        if (colorstatus.current == true) {
+            localStorage.setItem("setting", JSON.stringify(settingprofile));
+            colorstatus.current = false;
+        }
+    }, [settingprofile]);
 
 
     const [InputData, setInputData] = useState("");
@@ -57,19 +63,35 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
         localStorage.setItem("setting", JSON.stringify(cachesetting));
     }
 
-    useEffect(()=>{
-        if (colorstatus.current == true) {
-            localStorage.setItem("setting", JSON.stringify(settingprofile));
-            colorstatus.current = false;
-        }
-    }, [settingprofile])
+    const mergedata = () => {
+        rerenderStatus.current = true;
+        setData((prev)=>{
+            return [
+                ...(InputData.posts),
+                ...prev,
+            ]
+        })
+    }
+
+    const mergeprofile = () => {
+        colorstatus = true;
+        
+        let inputlist = InputProfile.group.map((i)=>i.name);
+        let buf = (new Object(settingprofile)).group.filter((i)=>inputlist.includes(i.name)==false);
+        setsettingprofile({
+            "group": [
+                ...(InputProfile.group),
+                ...buf,
+            ]
+        })
+    }
 
     return (
         <div className="app">
             <div className="importpage">
                 <h1>資料管理</h1>
                 <div className="importcontainer">
-                    <div>
+                    <div id="import">
                         <h3>匯入資料</h3>
                         <input type="file" accept=".json, .csv" onChange={DataInput} />
                         {(()=>{
@@ -77,13 +99,13 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
                                 return (
                                     <div className="inputbuttoncontainer">
                                         <button className="datainputbutton" onClick={replacedata}>取代</button>
-                                        <button className="datainputbutton">合併</button>
+                                        <button className="datainputbutton" onClick={mergedata}>合併</button>
                                     </div>
                                 )
                             }
                         })()}
                     </div>
-                    <div>
+                    <div id="import">
                         <h3>匯入設定檔</h3>
                         <input type="file" accept=".json, .csv" onChange={ProfileInput} />
                         {(()=>{
@@ -91,7 +113,7 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
                                 return (
                                     <div className="inputbuttoncontainer">
                                         <button className="profileinputbutton" onClick={replaceprofile}>取代</button>
-                                        <button className="profileinputbutton">合併</button>
+                                        <button className="profileinputbutton" onClick={mergeprofile}>合併</button>
                                     </div>
                                 )
                             }
@@ -100,6 +122,7 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
                     <div>
                         <h3>匯出資料</h3>
                         <a
+                            id="export"
                             href={`data:text/json;charset=utf-8,${encodeURIComponent(
                             JSON.stringify(data)
                             )}`}
@@ -111,6 +134,7 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
                     <div>
                         <h3>匯出設定檔</h3>
                         <a
+                            id="export"
                             href={`data:text/json;charset=utf-8,${encodeURIComponent(
                             JSON.stringify(settingprofile)
                             )}`}
@@ -120,6 +144,7 @@ const Importpage = ({ data, setData, settingprofile, setsettingprofile, rerender
                         </a>
                     </div>
                 </div>
+                <div className="space"></div>
             </div>
             <Menu />
         </div>

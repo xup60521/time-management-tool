@@ -621,6 +621,66 @@ div.importcontainer {
     grid-template-columns: 50% 50%;
 }
 
+button.datainputbutton {
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    width: 50px;
+    margin: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+button.datainputbutton:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+}
+
+button.profileinputbutton {
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    width: 50px;
+    margin: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 3px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+button.profileinputbutton:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+    
+}
+
+a#export {
+    text-decoration: none;
+    border: 2px solid rgb(102, 123, 132);
+    border-radius: 5px;
+    background-color: rgb(102, 123, 132);
+    color: white;
+    padding: 0.3rem;
+}
+
+a#export:hover {
+    background-color: #2D4356;
+    border-color: #2D4356;
+    
+}
+
+div.space {
+    height: 3rem;
+}
+
+div#import {
+    height: 10rem;
+}
+
 
 @media (min-width: 780px) {
     .app {
